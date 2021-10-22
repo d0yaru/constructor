@@ -1,0 +1,70 @@
+document.addEventListener("DOMContentLoaded", function(event) {
+
+    var ym_id = 44925766;
+
+    function ym_reachGoal(ymid, event){
+        if (typeof ym != 'undefined' && ymid > 0 && event.length > 0) {
+            ym(ymid,'reachGoal',event);
+            console.log('reachGoal - '+event);
+        }
+    }
+
+    function gtag_event(event, event_cat){
+        if (typeof gtag != 'undefined' && event.length > 0 && event_cat.length > 0){
+            gtag('event', event, {'event_category':event_cat});
+            console.log('gtag_event - '+event+' : '+event_cat);
+        }
+    }
+
+
+
+    //   http://joxi.ru/D2PZwkpcJlyJ7r
+    $(document).on('click', '.target_3d', function(event) {
+        ym_reachGoal(ym_id, 'onlineproject');
+        gtag_event('onlineproject', 'one');
+    });
+
+    //   http://joxi.ru/Vm6XNEWtv1Y38A
+    //$(document).on('click', '.target_add', function(event) {
+    $(document).on('click', '.objOrderFrm .addToBasket.inpSubmit', function(event) {
+        ym_reachGoal(ym_id, 'dobavitkzakazy');
+        gtag_event('dobavitkzakazy', 'one');
+    });
+
+    //   http://joxi.ru/8AnwKYycyX488r
+    $(document).on('click', '.target_basket', function(event) {
+        ym_reachGoal(ym_id, 'perehodvkorziny');
+        gtag_event('perehodvkorziny', 'one');
+    });
+
+    //   http://joxi.ru/v29b1gocpl8QKA
+    $(document).on('click', '.target_saveOrder', function(event) {
+        ym_reachGoal(ym_id, 'click_sohranit');
+        gtag_event('click_sohranit', 'one');
+    });
+
+    //   http://joxi.ru/KAgzwD3tKjDjv2
+    $(document).on('click', '.target_printPage', function(event) {
+        ym_reachGoal(ym_id, 'printpage');
+        gtag_event('printpage', 'one');
+    });
+
+    //   Клик по любой ссылке на email
+    $(document).on('click', 'a[href^="mailto"]', function(event) {
+        ym_reachGoal(ym_id, 'kliknamilo');
+        gtag_event('kliknamilo', 'one');
+    });
+
+    //   Клик по номеру телефона
+    $(document).on('click', 'a[href^="tel"]', function(event) {
+        ym_reachGoal(ym_id, 'telephonecall');
+        gtag_event('telephonecall', 'one');
+    });
+
+    //   http://joxi.ru/ZrJ5wRgCnR833A
+    $('.target_config').click(function(event) {
+        ym_reachGoal(ym_id, 'click_konfiguracia');
+        gtag_event('click_konfiguracia', 'one');
+    });
+
+});

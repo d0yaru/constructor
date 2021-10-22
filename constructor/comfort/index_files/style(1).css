@@ -1,0 +1,11 @@
+img.base1, img.base2 {
+    z-index: 2;
+}
+
+img.front.base {
+    z-index: 10;
+}
+
+p.subtitle {
+    font-size: 13px;
+}
