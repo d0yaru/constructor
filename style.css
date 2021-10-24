@@ -80,13 +80,13 @@ table td {
 }
 a:link,
 a {
-  color: #069293;
+  color: #333;
   cursor: pointer;
 }
 a:hover,
 a:active {
   text-decoration: none;
-  color: #cc3300;
+  color: #333;
 }
 .wrap {
   position: relative;
@@ -104,6 +104,52 @@ a:active {
   margin-top: 25px;
   margin-bottom: 25px;
 }
+/* css d0 */
+.chosen-single {
+  display: none;
+}
+.chosen-drop {
+  display: none;
+}
+.d0link {
+  text-decoration: none
+}
+.d0li {
+  list-style-type: none;
+  margin: 3px;
+}
+.d0li:hover {
+  border-radius: 2px;
+  width: 340px;
+  margin: 3px;
+  background: -webkit-gradient(linear, 0 0, 0 bottom, from(#c5ced2), to(#a7b4bb));
+  background: -webkit-linear-gradient(#c5ced2, #a7b4bb);
+  background: -moz-linear-gradient(#c5ced2, #a7b4bb);
+  background: -ms-linear-gradient(#c5ced2, #a7b4bb);
+  background: -o-linear-gradient(#c5ced2, #a7b4bb);
+  background: linear-gradient(#c5ced2, #a7b4bb);
+  -pie-background: linear-gradient(#c5ced2, #a7b4bb);
+  cursor: pointer;
+}
+.d0li--active {
+  border-radius: 2px;
+  width: 340px;
+  margin: 3px;
+  -moz-box-shadow: inset 0 2px 5px #046d6f;
+  -webkit-box-shadow: inset 0 2px 5px #046d6f;
+  box-shadow: inset 0 2px 5px #046d6f;
+  background: -webkit-gradient(linear, 0 0, 0 bottom, from(#14b0b2), to(#06aaac));
+  background: -webkit-linear-gradient(#14b0b2, #06aaac);
+  background: -moz-linear-gradient(#14b0b2, #06aaac);
+  background: -ms-linear-gradient(#14b0b2, #06aaac);
+  background: -o-linear-gradient(#14b0b2, #06aaac);
+  background: linear-gradient(#14b0b2, #06aaac);
+  -pie-background: linear-gradient(#14b0b2, #06aaac);
+}
+.d0link--active {
+  color: #fff;
+}
+/*  */
 .wrapIn {
   position: relative;
   width: 1000px;
@@ -418,6 +464,7 @@ html > body .footerWrap {
   -webkit-border-radius: 2px;
   border-radius: 2px;
   behavior: url(/css/pie/PIE.php);
+  display: none;
 }
 .linkButton:hover {
   color: #069293;
@@ -4312,12 +4359,13 @@ table caption {
 .content ul li {
   padding: 0 0 4px 10px;
 }
-.content ul li:before {
+/* css d0 */
+/* .content ul li:before {
   content: '\2022';
   margin: 0 6px 0 -13px;
   font: normal 1em/1 Arial;
   color: #069293;
-}
+} */
 .content h2 + ol {
   margin-top: -18px;
 }
@@ -5378,6 +5426,9 @@ p.tooltips-opened.tooltips .tooltip-content {
   bottom: 25px;
   left: -132px;
   z-index: 99999;
+}
+.tooltip-content {
+  display: none;
 }
 .tooltip-content label {
   margin-right: 18px;
