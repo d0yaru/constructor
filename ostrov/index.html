@@ -3364,16 +3364,16 @@
 							</div>
 							<ul>
 								<a class="d0link" href="/"><li class="d0li">Рабочие места серии Альфа</li></a>
-								<a class="d0link" href="/alliance.html"><li class="d0li">Рабочие места серии Альянс</li></a>
-								<a class="d0link" href="/gamma_workbenches.html"><li class="d0li">Рабочие места серии Гамма</li></a>
-								<a class="d0link" href="/classic.html"><li class="d0li">Рабочие места серии Классик</li></a>
-								<a class="d0link" href="/upakovochnye-rabochie-mesta.html"><li class="d0li">Упаковочные рабочие места</li></a>
-								<a class="d0link" href="/comfort.html"><li class="d0li">Рабочие места серии Комфорт</li></a>
-								<a class="d0link" href="/constant.html"><li class="d0li">Рабочие места серии Констант</li></a>
-								<a class="d0link" href="/verstak-serii-grand.html"><li class="d0li">Верстак серии Гранд</li></a>
-								<a class="d0link d0link--active" href="/ostrov.html"><li class="d0li--active">Рабочие места серии Остров</li></a>
-								<a class="d0link" href="/verstak.html"><li class="d0li">Рабочие места серии Верстак</li></a>
-								<a class="d0link" href="/alliancedop.html"><li class="d0li">Рабочие места серии Альянс дополнительный</li></a>
+								<a class="d0link" href="/alliance/"><li class="d0li">Рабочие места серии Альянс</li></a>
+								<a class="d0link" href="/gamma_workbenches/"><li class="d0li">Рабочие места серии Гамма</li></a>
+								<a class="d0link" href="/classic/"><li class="d0li">Рабочие места серии Классик</li></a>
+								<a class="d0link" href="/upakovochnye-rabochie-mesta/"><li class="d0li">Упаковочные рабочие места</li></a>
+								<a class="d0link" href="/comfort/"><li class="d0li">Рабочие места серии Комфорт</li></a>
+								<a class="d0link" href="/constant/"><li class="d0li">Рабочие места серии Констант</li></a>
+								<a class="d0link" href="/verstak-serii-grand/"><li class="d0li">Верстак серии Гранд</li></a>
+								<a class="d0link d0link--active" href="/ostrov/"><li class="d0li--active">Рабочие места серии Остров</li></a>
+								<a class="d0link" href="/verstak/"><li class="d0li">Рабочие места серии Верстак</li></a>
+								<a class="d0link" href="/alliancedop/"><li class="d0li">Рабочие места серии Альянс дополнительный</li></a>
 							</ul>
 						</div>
 						<div id="filter-change">
@@ -3773,6 +3773,8 @@
 	<script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
 	<!-- ---------------------------------------------------------------------------------------------------- -->
 	<script>
+		let d0allconfig = "#order:Рабочие места серии Остров ";
+
 		$(function(){
     if($('.designerShowWrap').length){
         $(window).scroll(function(){
@@ -3885,33 +3887,35 @@
 
     $('.js-submit-ostrov').on('click', function(e){
         e.preventDefault();
-        var $form = $(this).parents('form'),
-            button = $(this);
+		  document.location.replace(d0allconfig);
 
-        $.ajax({
-            url: $form.attr('action'),
-            method: 'post',
-            data: {
-                "ID": ID,
-                "COMPL": COMPL
-            },
-            type: 'POST',
-            dataType: 'json'
-        }).done(function( r ) {
-            showMsg(button, r.text);
-            button.hide();
-            button.after(ORDER_BTN);
+      //   var $form = $(this).parents('form'),
+      //       button = $(this);
 
-            if(!$('.service').hasClass('withBasket'))
-                $('.service').addClass('withBasket');
+      //   $.ajax({
+      //       url: $form.attr('action'),
+      //       method: 'post',
+      //       data: {
+      //           "ID": ID,
+      //           "COMPL": COMPL
+      //       },
+      //       type: 'POST',
+      //       dataType: 'json'
+      //   }).done(function( r ) {
+      //       showMsg(button, r.text);
+      //       button.hide();
+      //       button.after(ORDER_BTN);
 
-            if(!$('.js-cart-total').length)
-                $('.service').prepend('<a href="/order/" class="lieButton js-cart-total">'+ r.basketText+'</a>');
-            else
-                $('.js-cart-total').html(r.basketText);
+      //       if(!$('.service').hasClass('withBasket'))
+      //           $('.service').addClass('withBasket');
 
-            resetConstructor();
-        });
+      //       if(!$('.js-cart-total').length)
+      //           $('.service').prepend('<a href="/order/" class="lieButton js-cart-total">'+ r.basketText+'</a>');
+      //       else
+      //           $('.js-cart-total').html(r.basketText);
+
+      //       resetConstructor();
+      //   });
     });
 
     $('#print').on('click', function(e){ // TODO: возможно надо будет переделать, т.к. добавится выбор цвета
@@ -4177,15 +4181,16 @@ function updateConstructor(){
 	}
 //----------------------------------------------------------------------------------------------------------
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
-console.log("-------------------------------------");
+//console.log("-------------------------------------");
 
 let d0all = "#order:Рабочие места серии Остров ";
 for (let i = 0; i < COMPL.length; i++) {
-	d0all = d0all + COMPL[i] + ",";
+	d0all = d0all+","+COMPL[i];
 }
-console.log(d0all+"="+$newPrice);
+d0allconfig = d0all+"="+$newPrice;
+//console.log(d0all+"="+$newPrice);
 
-console.log("-------------------------------------");
+//console.log("-------------------------------------");
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //----------------------------------------------------------------------------------------------------------
 }
