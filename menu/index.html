@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Menu Link</title>
+</head>
+
+<body>
+	<!-- ------------------------------------------------------------------------------------------------------------ -->
+	<style>
+		a {
+			text-decoration: none;
+		}
+
+		.links-select {
+			line-height: 2.65em;
+			display: inline-block;
+			text-align: center;
+		}
+
+		.links-select-label {
+			background: linear-gradient(#14b0b2, #05aaac);
+			color: #fff;
+			text-shadow: 0 -1px 1px #0b797b;
+			border-radius: 3px;
+		}
+
+		.links-select-label::before {
+			content: "";
+			border-left: 7px solid transparent;
+			border-right: 7px solid transparent;
+			border-top: 10px solid #fff;
+			position: absolute;
+			/* left: 307px;
+			top: 25px; */
+			left: 325px;
+			top: 61px;
+			box-shadow: 0 -1px 1px #0b797b;
+		}
+
+		.links-select-item {
+			display: block;
+			height: 1px;
+			margin-top: -1px;
+			border: 1px solid #e3e3e3;
+			border-radius: 3px;
+			color: #333;
+			opacity: 0;
+			padding: 0 5px;
+		}
+
+		.links-select:hover .links-select-item {
+			height: 2.65em;
+			border-width: 1px;
+			opacity: 1;
+		}
+
+		.links-select-item:hover {
+			box-shadow: inset 0 2px 5px #046d6f;
+			background: linear-gradient(#14b0b2, #06aaac);
+			color: #fff;
+			text-shadow: 0 -1px 1px #0b797b;
+		}
+
+		.links-select-current-item {
+			box-shadow: inset 0 2px 5px #046d6f;
+			background: linear-gradient(#14b0b2, #06aaac);
+			color: #fff;
+			text-shadow: 0 -1px 1px #0b797b;
+		}
+	</style>
+	<!-- ------------------------------------------------------------------------------------------------------------ -->
+	<span class="links-select">
+		<a href="#" class="links-select-label" id="idlinks-select-label" style="padding: 12px 69px;">Рабочие места серии Альфа</a>
+		<a href="/alfa/" class="links-select-item">Рабочие места серии Альфа</a>
+		<a href="/alliance/" class="links-select-item">Рабочие места серии Альянс</a>
+		<a href="/gamma_workbenches/" class="links-select-item">Рабочие места серии Гамма</a>
+		<a href="/classic/" class="links-select-item links-select-current-item">Рабочие места серии Классик</a>
+		<a href="/upakovochnye-rabochie-mesta/" class="links-select-item">Упаковочные рабочие места</a>
+		<a href="/comfort/" class="links-select-item">Рабочие места серии Комфорт</a>
+		<a href="/constant/" class="links-select-item">Рабочие места серии Констант</a>
+		<a href="/verstak-serii-grand/" class="links-select-item">Верстак серии Гранд</a>
+		<a href="/ostrov/" class="links-select-item">Рабочие места серии Остров</a>
+		<a href="/verstak/" class="links-select-item">Рабочие места серии Верстак</a>
+		<a href="/alliancedop/" class="links-select-item">Рабочие места серии Альянс дополнительный</a>
+	</span>
+	<!-- ------------------------------------------------------------------------------------------------------------ -->
+	<p>Проверка</p>
+	<script>
+		document.getElementById("idlinks-select-label").style.color="#fff";
+		const introList = document.querySelectorAll('.links-select-item');
+		for (let i = 0, length = introList.length; i < length; i++) {
+			introList[i].style.color="#333";
+		}
+	</script>
+	<!-- ------------------------------------------------------------------------------------------------------------ -->
+</body>
+
+</html>

@@ -2870,6 +2870,9 @@
 
 							<p class="withHint"><input class="inpSubmit bigBttn js-submit-btn js-submit-alfa" type="button"
 									value="Добавить к заказу"></p>
+
+							<a class="tn-atom d0btn" id="d0ibtn" href="#order:Рабочие места серии Альфа (11100000000000000000)=288000:::image=https://static.tildacdn.com/tild6564-3431-4366-b331-323834326336/base-2.png">Тестовая кнопка</a>
+
 							<a href="https://li9.ru/constructor/alpha/#" id="print" class="linkButton target_printPage"><i
 									class="icoPrint"></i>Распечатать результат</a>
 						</div>
@@ -2880,7 +2883,7 @@
 		<!-- ///////////////////////////////////////////////////////////////////////////////////////////////// -->
 	</div>
 	<!-- ---------------------------------------------------------------------------------------------------- -->
-	<script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
+	<script type="text/javascript" src="/jquery-1.10.1.min.js"></script>
 	<!-- ---------------------------------------------------------------------------------------------------- -->
 	<script>
 		let d0allconfig = "#order:Рабочие места серии Альфа ";
@@ -3291,12 +3294,16 @@ function updateConstructor(){
 
 let d0all = "#order:Рабочие места серии Альфа ";
 for (let i = 0; i < COMPL.length; i++) {
-	d0all = d0all+","+COMPL[i];
+	d0all = d0all+":"+COMPL[i];
 }
 d0allconfig = d0all+"="+$newPrice;
 //console.log(d0allconfig);
 
 //console.log("-------------------------------------");
+console.log("-------------------------------------");
+
+document.getElementById("d0ibtn").href=d0allconfig+":::image=https://static.tildacdn.com/tild6564-3431-4366-b331-323834326336/base-2.png";
+console.log("-------------------------------------");
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //----------------------------------------------------------------------------------------------------------
 }
@@ -3335,7 +3342,21 @@ return km + kw + kd;
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //----------------------------------------------------------------------------------------------------------
+
 	</script>
+<script type="text/javascript" src="/jquery.magnific-popup.min.js"></script>
+
+        <script type="text/javascript" src="/fotorama.js"></script>
+        
+        <script type="text/javascript" src="/chosen.jquery.js"></script>
+
+        <script type="text/javascript" src="/plugin.js"></script>
+
+        
+        <script type="text/javascript" src="/main.js"></script>		
+       
+        <script type="text/javascript" src="/script(1).js"></script>
+        	
 	<!-- ---------------------------------------------------------------------------------------------------- -->
 </body>
 
